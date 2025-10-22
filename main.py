@@ -30,5 +30,6 @@ async def create_cover(cover_image: Annotated[bytes, File()], author: str):
         tmp.write(cover_image)
         tmp_path = tmp.name
         book.set_cover(f"{author}_cover.png", cover_image)
+
         # return FileResponse()
         return {"ok": "ok"}
